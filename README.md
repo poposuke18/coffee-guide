@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# Coffee Guide App 🍵
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+コーヒーの種類や特徴を包括的に紹介するWebアプリケーションです。初心者から上級者まで、様々なユーザーがコーヒーについての知識を深められるプラットフォームを目指しています。
 
-## Available Scripts
+[アプリを見る](https://poposuke18.github.io/coffee-guide)
 
-In the project directory, you can run:
+![メイン画面](./screenshots/main.png)
 
-### `npm start`
+## 機能一覧
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. コーヒー豆の特性 🌱
+- 10種類以上のコーヒー豆データ
+- レーダーチャートによる特性の視覚化
+- 地域別フィルタリング（全地域/中南米/アフリカ/アジア/その他）
+- 詳細な産地情報と風味特性の表示
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![コーヒー豆の特性](./screenshots/beans.png)
 
-### `npm test`
+### 2. 焙煎度合い 🔥
+- 8段階の焙煎度の詳細解説
+- インタラクティブな色相変化による視覚的な理解
+- 各焙煎レベルの特徴と推奨用途
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![焙煎度合い](./screenshots/roasting.png)
 
-### `npm run build`
+### 3. 加工方法 ⚙️
+- 生豆加工方法の解説
+- 製品加工方法の詳細
+- タブ切り替えによる情報の整理
+- 各工程の特徴と影響の説明
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![加工方法](./screenshots/processing.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4. 抽出方法 ☕
+- 8種類の代表的な抽出方法
+- 難易度表示システム
+- 詳細な手順と必要器具の解説
+- カテゴリー別（温抽出/冷抽出/圧力抽出）の分類
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![抽出方法](./screenshots/brewing.png)
 
-### `npm run eject`
+### 5. コーヒーの種類 🫘
+- 様々なコーヒーメニューの紹介
+- カテゴリーフィルタリング機能
+- 濃さとミルク量の視覚的表示
+- 詳細な製法と特徴の解説
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![コーヒーの種類](./screenshots/types.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 使用例
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### コーヒー豆の選び方
+1. 「コーヒー豆の特性」ページを開く
+2. 地域フィルターで好みの地域を選択
+3. レーダーチャートで特性を確認
+4. 詳細パネルで産地情報や風味を確認
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 抽出方法の選択
+1. 「抽出方法」ページを開く
+2. 難易度や所要時間で絞り込み
+3. 各方法の詳細を確認
+4. 必要な道具リストをチェック
 
-## Learn More
+## 技術スタック
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React v18.x
+- React Hooks (useState)
+- recharts v2.x (データビジュアライゼーション)
+- Tailwind CSS (スタイリング)
+- shadcn/ui (UIコンポーネント)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ローカルでの実行方法
 
-### Code Splitting
+```bash
+# リポジトリのクローン
+git clone https://github.com/poposuke18/coffee-guide.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# 依存関係のインストール
+cd coffee-guide
+npm install
 
-### Analyzing the Bundle Size
+# 開発サーバーの起動
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## トラブルシューティング
 
-### Making a Progressive Web App
+### よくある問題と解決方法
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. **ページが表示されない**
+   - キャッシュのクリアを試してください
+   - `npm install` を再実行してください
 
-### Advanced Configuration
+2. **グラフが表示されない**
+   - ブラウザのJavaScriptが有効になっているか確認してください
+   - 開発者ツールでエラーメッセージを確認してください
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. **スタイルが崩れる**
+   - ブラウザを最新バージョンに更新してください
+   - `npm clear cache` を実行してから再インストールしてください
 
-### Deployment
+### 動作環境
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Node.js v18.x 以上
+- npm v9.x 以上
+- 推奨ブラウザ: Chrome, Firefox, Safari の最新版
 
-### `npm run build` fails to minify
+## 今後の開発予定
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 優先度：高
+- 検索・フィルタリング機能の強化
+  - キーワード検索
+  - 複合フィルタリング
+
+### 優先度：中
+- お気に入り機能
+  - LocalStorageを活用した保存機能
+  - カスタムノート機能
+- UI/UXの改善
+  - アニメーションの追加
+  - アクセシビリティの向上
+
+### 優先度：低
+- パフォーマンス最適化
+  - コード分割
+  - 遅延読み込み
+  - キャッシュ戦略
+
+## ライセンス
+
+MIT
+
+## 作者
+
+[poposuke18](https://github.com/poposuke18)
