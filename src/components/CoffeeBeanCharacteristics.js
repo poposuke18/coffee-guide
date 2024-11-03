@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';  // useRef を追加
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
 import commonStyles from '../styles/commonStyles';
 
 const CoffeeBeanCharacteristics = ({ onBack }) => {
   const [selectedCoffee, setSelectedCoffee] = useState(null);
+  const detailRef = useRef(null); // 追加
   const [selectedRegion, setSelectedRegion] = useState('all');
 
   const regions = [
@@ -194,6 +195,150 @@ const CoffeeBeanCharacteristics = ({ onBack }) => {
       flavor_notes: ["ブラックベリー", "ワイン", "柑橘"],
       processing: "ウォッシュド",
       icon: "🇹🇿"
+    },
+    {
+      name: "ジャマイカ ブルーマウンテン",
+      region: "america",
+      country: "ジャマイカ",
+      altitude: "1,500-2,000m",
+      harvest: "8月-12月",
+      characteristics: {
+        コク: 6,
+        苦味: 4,
+        酸味: 7,
+        香り: 9,
+        甘み: 8
+      },
+      description: "なめらかな口当たりと優雅な香り、バランスの取れた味わいが特徴の最高級コーヒー。",
+      flavor_notes: ["花のような香り", "ワイン", "チョコレート"],
+      processing: "ウォッシュド",
+      icon: "🇯🇲"
+    },
+    {
+      name: "スマトラ リントン",
+      region: "asia",
+      country: "インドネシア",
+      altitude: "1,200-1,500m",
+      harvest: "通年",
+      characteristics: {
+        コク: 8,
+        苦味: 7,
+        酸味: 3,
+        香り: 7,
+        甘み: 5
+      },
+      description: "豊かなボディと独特のアースリーな風味、スパイシーな後味が特徴です。",
+      flavor_notes: ["アース", "スパイス", "ハーブ", "ダークチョコレート"],
+      processing: "ウェットハルド",
+      icon: "🇮🇩"
+    },
+    {
+      name: "ハワイ コナ",
+      region: "others",
+      country: "アメリカ",
+      altitude: "600-900m",
+      harvest: "8月-2月",
+      characteristics: {
+        コク: 6,
+        苦味: 4,
+        酸味: 6,
+        香り: 8,
+        甘み: 7
+      },
+      description: "なめらかでクリーンな味わい、軽い口当たりとナッティな風味が特徴です。",
+      flavor_notes: ["ナッツ", "キャラメル", "フルーツ"],
+      processing: "ウォッシュド",
+      icon: "🇺🇸"
+    },
+    {
+      name: "ルワンダ ブルボン",
+      region: "africa",
+      country: "ルワンダ",
+      altitude: "1,700-2,000m",
+      harvest: "3月-7月",
+      characteristics: {
+        コク: 6,
+        苦味: 4,
+        酸味: 8,
+        香り: 9,
+        甘み: 7
+      },
+      description: "オレンジやジャスミンのような華やかな香りと、マイルドな口当たりが特徴です。",
+      flavor_notes: ["オレンジ", "ジャスミン", "ハチミツ"],
+      processing: "ウォッシュド",
+      icon: "🇷🇼"
+    },
+    {
+      name: "メキシコ アルトゥラ",
+      region: "america",
+      country: "メキシコ",
+      altitude: "1,200-1,600m",
+      harvest: "11月-3月",
+      characteristics: {
+        コク: 7,
+        苦味: 5,
+        酸味: 6,
+        香り: 7,
+        甘み: 6
+      },
+      description: "バランスの取れた味わいとナッツのような風味、軽やかな酸味が特徴です。",
+      flavor_notes: ["ナッツ", "キャラメル", "シトラス"],
+      processing: "ウォッシュド",
+      icon: "🇲🇽"
+    },
+    {
+      name: "インド マイソール",
+      region: "asia",
+      country: "インド",
+      altitude: "1,000-1,500m",
+      harvest: "11月-2月",
+      characteristics: {
+        コク: 8,
+        苦味: 7,
+        酸味: 4,
+        香り: 6,
+        甘み: 5
+      },
+      description: "しっかりとしたボディと深いコク、スパイシーな風味が特徴です。",
+      flavor_notes: ["スパイス", "ダークチョコレート", "モルト"],
+      processing: "モンスーン",
+      icon: "🇮🇳"
+    },
+    {
+      name: "ベトナム ロブスタ",
+      region: "asia",
+      country: "ベトナム",
+      altitude: "400-900m",
+      harvest: "10月-3月",
+      characteristics: {
+        コク: 9,
+        苦味: 9,
+        酸味: 2,
+        香り: 5,
+        甘み: 3
+      },
+      description: "力強い苦味とコク、チョコレートのような風味が特徴のロブスタ種です。",
+      flavor_notes: ["ダークチョコレート", "ナッツ", "アース"],
+      processing: "ドライ",
+      icon: "🇻🇳"
+    },
+    {
+      name: "ニカラグア マラゴジペ",
+      region: "america",
+      country: "ニカラグア",
+      altitude: "1,200-1,500m",
+      harvest: "12月-3月",
+      characteristics: {
+        コク: 6,
+        苦味: 4,
+        酸味: 7,
+        香り: 8,
+        甘み: 7
+      },
+      description: "大粒の豆から抽出される、フルーティーでエレガントな味わいが特徴です。",
+      flavor_notes: ["トロピカルフルーツ", "フローラル", "ハチミツ"],
+      processing: "ウォッシュド",
+      icon: "🇳🇮"
     }
   ];
 
@@ -202,6 +347,17 @@ const CoffeeBeanCharacteristics = ({ onBack }) => {
       subject: key,
       value: value
     }));
+  };
+
+  const handleCoffeeSelect = (coffee) => {
+    setSelectedCoffee(coffee);
+    // 少し遅延させてスクロール（アニメーションが完了してから）
+    setTimeout(() => {
+      detailRef.current?.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 100);
   };
 
   const filteredCoffee = selectedRegion === 'all' 
@@ -236,7 +392,7 @@ const CoffeeBeanCharacteristics = ({ onBack }) => {
           {filteredCoffee.map((coffee) => (
             <div 
               key={coffee.name}
-              onClick={() => setSelectedCoffee(coffee)}
+              onClick={() => handleCoffeeSelect(coffee)} // 変更
               style={{
                 ...commonStyles.card,
                 cursor: 'pointer',
@@ -288,7 +444,8 @@ const CoffeeBeanCharacteristics = ({ onBack }) => {
         </div>
     
         {selectedCoffee && (
-          <div style={commonStyles.detailPanel}>
+          <div ref={detailRef} // 追加
+          style={commonStyles.detailPanel}>
             <div style={commonStyles.detailHeader}>
               <span style={commonStyles.detailIcon}>{selectedCoffee.icon}</span>
               <h2 style={commonStyles.detailTitle}>{selectedCoffee.name}</h2>
