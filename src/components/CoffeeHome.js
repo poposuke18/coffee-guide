@@ -31,6 +31,12 @@ const CoffeeHome = ({ onPageChange }) => {
       description: "ブレンドやシングルオリジンなど",
       icon: "🫘",
       page: "types"
+    },
+    {
+      title: "コーヒーの基礎知識",  // 新規追加
+      description: "コーヒーの歴史や特性について学ぶ",
+      icon: "📚",
+      page: "basics"
     }
   ];
 
