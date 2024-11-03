@@ -1,3 +1,4 @@
+// App.js の修正
 import React, { useState } from 'react';
 import ErrorBoundary from './components/ErrorBoundary';
 import CoffeeHome from './components/CoffeeHome';
@@ -6,6 +7,7 @@ import RoastingLevels from './components/RoastingLevels';
 import ProcessingMethods from './components/ProcessingMethods';
 import BrewingMethods from './components/BrewingMethods';
 import CoffeeTypes from './components/CoffeeTypes';
+import CoffeeBasics from './components/CoffeeBasics'; // 追加
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -16,6 +18,8 @@ function App() {
 
   const renderPage = () => {
     switch(currentPage) {
+      case 'basics':  // 追加
+        return <CoffeeBasics onBack={handleBack} />;
       case 'beans':
         return <CoffeeBeanCharacteristics onBack={handleBack} />;
       case 'roasting':
